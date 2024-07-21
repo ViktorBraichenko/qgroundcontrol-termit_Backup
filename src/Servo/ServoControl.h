@@ -32,7 +32,7 @@ public:
     void dayLightEnable(int);
     void dayLightDisable(int);
     void rebEnable(int);
-    void UniversalDisable(int);
+    void universalDisable(int);
 private:
     Vehicle* _vehicle;
 };
