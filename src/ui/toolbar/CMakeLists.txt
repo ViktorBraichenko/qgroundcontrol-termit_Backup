@@ -8,6 +8,8 @@ add_custom_target(UiToolbarQml
 		JoystickIndicator.qml
 		DayLightActions.qml
 		NightLightActions.qml
+		RebActions.qml
+		UniversalActions.qml
 		LinkIndicator.qml
 		MainStatusIndicator.qml
 		MainToolBarIndicators.qml

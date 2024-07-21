@@ -493,6 +493,8 @@ public:
 
     Q_INVOKABLE void setDayLightEnabled   (bool enabled);
     Q_INVOKABLE void setNightLightEnabled (bool enabled);
+    Q_INVOKABLE void setRebEnabled (bool enabled);
+    Q_INVOKABLE void setUniversalEnabled (bool enabled);
 
     bool joystickEnabled            () const;
     // void setJoystickEnabled         (bool enabled);

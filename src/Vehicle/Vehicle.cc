@@ -2136,6 +2136,15 @@ void Vehicle::setNightLightEnabled(bool enabled)
     _servoControl->setNightLightEnabled(enabled, _defaultComponentId);
 }
 
+void Vehicle::setRebEnabled(bool enabled)
+{
+    _servoControl->setRebEnabled(enabled, _defaultComponentId);
+}
+void Vehicle::setUniversalEnabled(bool enabled)
+{
+    _servoControl->setUniversalEnabled(enabled, _defaultComponentId);
+}
+
 // this function called in three cases:
 // 1. On constructor of vehicle, to see if we should enable a joystick
 // 2. When there is a new active joystick

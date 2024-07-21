@@ -14,6 +14,18 @@
     "shortDesc":    "Status of night light",
     "type":         "bool",
     "default":      false
+},
+{
+    "name":         "reb",
+    "shortDesc":    "Status of reb activation",
+    "type":         "bool",
+    "default":      false
+},
+{
+    "name":         "universal",
+    "shortDesc":    "Status of universal servo",
+    "type":         "bool",
+    "default":      false
 }
 ]
 }
