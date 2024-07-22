@@ -22,7 +22,7 @@ Item {
     width:          rebRow.width * 1.1
     anchors.top:    parent.top
     anchors.bottom: parent.bottom
-
+    
     property var _activeVehicle:    QGroundControl.multiVehicleManager.activeVehicle
     property bool showIndicator:    true
     property bool _rebEnabled: _activeVehicle ? _activeVehicle.servo.reb.value : false
@@ -40,7 +40,7 @@ Item {
             source:             "/qmlimages/Reb.png"
             fillMode:           Image.PreserveAspectFit
             color: {
-                if (_activeVehicle.servo.dayLight.value) {
+                if (_activeVehicle.servo.reb.value) {
                     return "yellow"
                 }
 
