@@ -632,7 +632,7 @@ Item {
         case actionReb:
              _activeVehicle.setRebEnabled(actionData)
              break
-        case actionReb:
+        case actionUniversal:
              _activeVehicle.setUniversalEnabled(actionData)
              break
         default:

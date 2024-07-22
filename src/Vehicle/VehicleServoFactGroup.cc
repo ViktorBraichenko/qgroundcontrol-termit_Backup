@@ -22,18 +22,20 @@
 
 const char* VehicleServoFactGroup::_dayLightFactName   = "dayLight";
 const char* VehicleServoFactGroup::_nightLightFactName = "nightLight";
+const char* VehicleServoFactGroup::_rebFactName = "reb contol";
+const char* VehicleServoFactGroup::_universalFactName = "universal control";
 
 VehicleServoFactGroup::VehicleServoFactGroup(QObject* parent)
     : FactGroup(1000, ":/json/Vehicle/ServoStatusFactGroup.json", parent)
     , _dayLightFact   (0, _dayLightFactName,   FactMetaData::valueTypeBool)
     , _nightLightFact (0, _nightLightFactName, FactMetaData::valueTypeBool)
-    , _rebFact (0, _nightLightFactName, FactMetaData::valueTypeBool)
-    , _universalFact (0, _nightLightFactName, FactMetaData::valueTypeBool)
+    , _rebFact (0, _rebFactName, FactMetaData::valueTypeBool)
+    , _universalFact (0, _universalFactName, FactMetaData::valueTypeBool)
 {
     _addFact(&_dayLightFact,   _dayLightFactName);
     _addFact(&_nightLightFact, _nightLightFactName);
-    _addFact(&_rebFact, _nightLightFactName);
-    _addFact(&_universaltFact, _nightLightFactName);
+    _addFact(&_rebFact, _rebFactName);
+    _addFact(&_universalFact, _universalFactName);
 
     // _dayLightFact.setRawValue(false);
     // _nightLightFact.setRawValue(false);

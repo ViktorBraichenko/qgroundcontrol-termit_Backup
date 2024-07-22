@@ -336,6 +336,8 @@ const QVariantList& FirmwarePlugin::toolIndicators(const Vehicle*)
             QVariant::fromValue(QUrl::fromUserInput("qrc:/toolbar/RemoteIDIndicator.qml")),
             QVariant::fromValue(QUrl::fromUserInput("qrc:/toolbar/DayLightActions.qml")),
             QVariant::fromValue(QUrl::fromUserInput("qrc:/toolbar/NightLightActions.qml")),
+            QVariant::fromValue(QUrl::fromUserInput("qrc:/toolbar/RebActions.qml")),
+            QVariant::fromValue(QUrl::fromUserInput("qrc:/toolbar/UniversalActions.qml")),
         });
     }
     return _toolIndicatorList;

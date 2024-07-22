@@ -37,7 +37,7 @@ Item {
             anchors.top:        parent.top
             anchors.bottom:     parent.bottom
             sourceSize.height:  height
-            source:             "/qmlimages/REB_Logo.png"
+            source:             "/qmlimages/Reb.png"
             fillMode:           Image.PreserveAspectFit
             color: {
                 if (_activeVehicle.servo.dayLight.value) {

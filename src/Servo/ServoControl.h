@@ -31,8 +31,13 @@ public:
 
     void dayLightEnable(int);
     void dayLightDisable(int);
+    void nightLightEnable(int);
+    void nightLightDisable(int);
     void rebEnable(int);
+    void rebDisable(int);
+    void universalEnable(int);
     void universalDisable(int);
+
 private:
     Vehicle* _vehicle;
 };
