@@ -16,7 +16,7 @@
 
 #define DAY_LIGHT_SERVO   11
 #define NIGHT_LIGHT_SERVO 3
-#define REB_SERVO 6
+#define REB_SERVO 10
 #define UNIVERSAL_SERVO 7
 #define PWM_VALUE         1500
 
