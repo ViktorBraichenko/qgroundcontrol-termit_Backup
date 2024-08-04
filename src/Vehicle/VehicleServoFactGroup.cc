@@ -16,18 +16,26 @@
 
 #define DAY_LIGHT_SERVO   11
 #define NIGHT_LIGHT_SERVO 3
+#define REB_SERVO 10
+#define UNIVERSAL_SERVO 7
 #define PWM_VALUE         1500
 
 const char* VehicleServoFactGroup::_dayLightFactName   = "dayLight";
 const char* VehicleServoFactGroup::_nightLightFactName = "nightLight";
+const char* VehicleServoFactGroup::_rebFactName = "reb contol";
+const char* VehicleServoFactGroup::_universalFactName = "universal control";
 
 VehicleServoFactGroup::VehicleServoFactGroup(QObject* parent)
     : FactGroup(1000, ":/json/Vehicle/ServoStatusFactGroup.json", parent)
     , _dayLightFact   (0, _dayLightFactName,   FactMetaData::valueTypeBool)
     , _nightLightFact (0, _nightLightFactName, FactMetaData::valueTypeBool)
+    , _rebFact (0, _rebFactName, FactMetaData::valueTypeBool)
+    , _universalFact (0, _universalFactName, FactMetaData::valueTypeBool)
 {
     _addFact(&_dayLightFact,   _dayLightFactName);
     _addFact(&_nightLightFact, _nightLightFactName);
+    _addFact(&_rebFact, _rebFactName);
+    _addFact(&_universalFact, _universalFactName);
 
     // _dayLightFact.setRawValue(false);
     // _nightLightFact.setRawValue(false);
@@ -71,4 +79,6 @@ void VehicleServoFactGroup::_handleServoOutputRaw(mavlink_message_t& message)
  
     dayLight()   -> setRawValue ((_rgChannelvalues[DAY_LIGHT_SERVO - 1]   > PWM_VALUE) ? true : false);
     nightLight() -> setRawValue ((_rgChannelvalues[NIGHT_LIGHT_SERVO - 1] > PWM_VALUE) ? true : false);
+    reb() -> setRawValue ((_rgChannelvalues[REB_SERVO - 1] > PWM_VALUE) ? true : false);
+    universal() -> setRawValue ((_rgChannelvalues[UNIVERSAL_SERVO - 1] > PWM_VALUE) ? true : false);
 }

@@ -114,6 +114,8 @@ Item {
     readonly property int actionJoystickChangeStatus:       28
     readonly property int actionDayLight:                   29
     readonly property int actionNightLight:                 30
+    readonly property int actionReb:                        31
+    readonly property int actionUniversal:                  32
 
     property var    _activeVehicle:             QGroundControl.multiVehicleManager.activeVehicle
     property bool   _useChecklist:              QGroundControl.settingsManager.appSettings.useChecklist.rawValue && QGroundControl.corePlugin.options.preFlightChecklistUrl.toString().length
@@ -627,6 +629,12 @@ Item {
         case actionNightLight:
             _activeVehicle.setNightLightEnabled(actionData)
             break
+        case actionReb:
+             _activeVehicle.setRebEnabled(actionData)
+             break
+        case actionUniversal:
+             _activeVehicle.setUniversalEnabled(actionData)
+             break
         default:
             console.warn(qsTr("Internal error: unknown actionCode"), actionCode)
             break

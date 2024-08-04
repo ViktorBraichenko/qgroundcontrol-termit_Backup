@@ -26,11 +26,18 @@ public:
 
     Q_INVOKABLE void setDayLightEnabled(bool, int);
     Q_INVOKABLE void setNightLightEnabled(bool, int);
+    Q_INVOKABLE void setRebEnabled(bool, int);
+    Q_INVOKABLE void setUniversalEnabled(bool, int);
 
     void dayLightEnable(int);
     void dayLightDisable(int);
     void nightLightEnable(int);
     void nightLightDisable(int);
+    void rebEnable(int);
+    void rebDisable(int);
+    void universalEnable(int);
+    void universalDisable(int);
+
 private:
     Vehicle* _vehicle;
 };

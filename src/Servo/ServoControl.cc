@@ -17,6 +17,8 @@
 
 #define DAY_LIGHT_SERVO   11
 #define NIGHT_LIGHT_SERVO 3
+#define REB_SERVO 10
+#define UNIVERSAL_SERVO 7
 
 
 ServoControl::ServoControl(QObject *parent, Vehicle *vehicle)
@@ -37,6 +39,22 @@ void ServoControl::setNightLightEnabled(bool enabled, int _defaultComponentId) {
         nightLightDisable(_defaultComponentId);
     } else {
         nightLightEnable(_defaultComponentId);
+    }
+};
+
+void ServoControl::setRebEnabled(bool enabled, int _defaultComponentId) {
+    if (!enabled) {
+        rebDisable(_defaultComponentId);
+    } else {
+        rebEnable(_defaultComponentId);
+    }
+};
+
+void ServoControl::setUniversalEnabled(bool enabled, int _defaultComponentId) {
+    if (!enabled) {
+        universalDisable(_defaultComponentId);
+    } else {
+        universalEnable(_defaultComponentId);
     }
 };
 
@@ -84,6 +102,54 @@ void ServoControl::nightLightDisable(int _defaultComponentId) {
         MAV_CMD_DO_SET_SERVO,
         true,
         NIGHT_LIGHT_SERVO,
+        SERVO_PWM_OFF
+    );                
+};
+
+// ----------------------------------------------------------------------------
+void ServoControl::rebEnable(int _defaultComponentId) {
+    // _defaultComponentId
+    _vehicle->sendCommand(
+        _defaultComponentId,
+        MAV_CMD_DO_SET_SERVO,
+        true,
+        REB_SERVO,
+        SERVO_PWM_ON
+    );                
+};
+
+// ----------------------------------------------------------------------------
+void ServoControl::rebDisable(int _defaultComponentId) {
+    // _defaultComponentId
+    _vehicle->sendCommand(
+        _defaultComponentId,
+        MAV_CMD_DO_SET_SERVO,
+        true,
+        REB_SERVO,
+        SERVO_PWM_OFF
+    );                
+};
+
+// ----------------------------------------------------------------------------
+void ServoControl::universalEnable(int _defaultComponentId) {
+    // _defaultComponentId
+    _vehicle->sendCommand(
+        _defaultComponentId,
+        MAV_CMD_DO_SET_SERVO,
+        true,
+        UNIVERSAL_SERVO,
+        SERVO_PWM_ON
+    );                
+};
+
+// ----------------------------------------------------------------------------
+void ServoControl::universalDisable(int _defaultComponentId) {
+    // _defaultComponentId
+    _vehicle->sendCommand(
+        _defaultComponentId,
+        MAV_CMD_DO_SET_SERVO,
+        true,
+        UNIVERSAL_SERVO,
         SERVO_PWM_OFF
     );                
 };
